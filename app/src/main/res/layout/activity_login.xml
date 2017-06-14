@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        tools:context="com.example.a51notes.activities.LoginActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="45dp"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            android:text="@string/login_prompt"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"/>
+
+        <EditText
+            android:id="@+id/activity_login_username_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:maxLength="20"
+            android:textColorHint="@color/hint_color"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:hint="@string/hint_usernam"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"/>
+
+        <EditText
+            android:id="@+id/activity_login_password_et"
+            android:hint="@string/hint_password"
+            style="@style/TestStyle" />
+
+        <Button
+            android:id="@+id/activity_login_login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/text_color"
+            android:text="@string/login"/>
+
+
+        <TextView
+            android:id="@+id/activity_login_signup_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:text="@string/signup_prompt"/>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

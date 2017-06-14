@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:padding="5dp">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:paddingStart="5dp">
+        <TextView
+            android:id="@+id/note_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="30sp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:textColor="@color/red"
+            />
+        <TextView
+            android:id="@+id/note_item_desc"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:textSize="20dp"
+            android:maxLength="30"
+            android:maxLines="2" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/alarm_date"
+           android:textColor="@color/red"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="5dp"
+           android:layout_marginEnd="140dp"/>
+        <TextView
+            android:id="@+id/note_item_alarm_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="16"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="30dp"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/create_date"
+           android:textColor="@color/red"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="25dp"
+           android:layout_marginEnd="140dp"/>
+
+       <TextView
+            android:id="@+id/note_item_create_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="16"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginEnd="30dp"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/important"
+           android:textColor="@color/red"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="50dp"
+           android:layout_marginEnd="140dp"/>
+
+
+       <CheckBox
+           android:id="@+id/note_item_important"
+           android:clickable="false"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentTop="true"
+           android:layout_marginEnd="55dp"
+           android:layout_marginTop="25dp"
+           />
+
+       <View
+           android:id="@+id/note_item_color"
+           android:layout_width="25dp"
+           android:layout_height="match_parent"
+           android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"/>
+</android.support.v7.widget.CardView>

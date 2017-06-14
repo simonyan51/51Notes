@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <Button
+        android:id="@+id/properties_layout_edit"
+        android:text="@string/edit_note"
+        style="@style/custom_btn" />
+    <Button
+        android:id="@+id/properties_layout_delete"
+        android:text="@string/delete_note"
+        style="@style/custom_btn"
+        />
+    <TextView
+        android:id="@+id/properties_layout_cancel"
+        android:clickable="true"
+        android:layout_gravity="end"
+        android:layout_margin="15dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/colorpicker_dialog_cancel"/>
+</LinearLayout>

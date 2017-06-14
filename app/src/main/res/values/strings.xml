@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">51 Notes</string>
+    <string name="login_prompt">Please Log In To Use Application</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="hint_usernam">Enter Your Username</string>
+    <string name="hint_password">Enter Your Password</string>
+    <string name="login">Login</string>
+    <string name="signup_prompt">Don\'t Have An Account?\nSign Up</string>
+    <string name="registration_prompt">Fill In The Following Information</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alarm_date">Alarm Date:</string>
+    <string name="create_date">Create Date:</string>
+    <string name="important">Important:</string>
+    <string name="hint_age">Enter your age</string>
+    <string name="enter_your_note_title">Enter Your Note Title</string>
+    <string name="description">Description</string>
+    <string name="desc_hint">Enter Your Description</string>
+    <string name="title">Title</string>
+    <string name="color">Color</string>
+    <string name="select_color">Select Color</string>
+    <string name="mark_as_important">Mark As Important</string>
+    <string name="create_note_btn">Create Note</string>
+    <string name="select_date">Select Date</string>
+    <string name="alarm_time">Alarm Time</string>
+    <string name="select_time">Select Time</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="delete_note">Delete Note</string>
+</resources>
