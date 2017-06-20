@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.a51notes.R;
 import com.example.a51notes.pojos.Note;
+import com.example.a51notes.utils.NoteAlarmHelper;
 import com.example.a51notes.utils.note.FileNoteStorage;
 import com.example.a51notes.utils.note.NoteStorage;
 import com.github.jjobes.slidedatetimepicker.SlideDateTimeListener;
@@ -91,7 +92,7 @@ public class EditNoteFragment extends Fragment implements View.OnClickListener {
 
         title.setText(note.getTitle());
         desc.setText(note.getDescription());
-        alarmDate.setText(note.getAlarmDate() != null? note.getAlarmDate().toString() : "");
+        alarmDate.setText(note.getAlarmDate() != null? note.getAlarmDate().toString() : "No Alarm Date");
         color.setBackgroundColor(note.getColor());
         important.setChecked(note.isImportant());
     }
@@ -125,7 +126,6 @@ public class EditNoteFragment extends Fragment implements View.OnClickListener {
             public void onDateTimeCancel()
             {
                 alarmDate.setText(note.getAlarmDate() != null? note.getAlarmDate().toString() : "");
-                note.setAlarmDate(null);
             }
         };
 
@@ -159,7 +159,7 @@ public class EditNoteFragment extends Fragment implements View.OnClickListener {
         note.setDescription(desc.getText().toString());
         note.setColor(selectedColor);
         note.setImportant(important.isChecked());
-
+        NoteAlarmHelper.setAlarm(note, getActivity(), getContext());
         storage.updateNote(note, null);
 
         transaction = getActivity().getSupportFragmentManager().beginTransaction();

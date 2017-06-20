@@ -1,9 +1,13 @@
 package com.example.a51notes.fragments;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -16,9 +20,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.a51notes.R;
+import com.example.a51notes.broadcasts.AlarmDateBroadcastReceiver;
 import com.example.a51notes.pojos.Note;
+import com.example.a51notes.utils.NoteAlarmHelper;
 import com.github.jjobes.slidedatetimepicker.SlideDateTimeListener;
 import com.github.jjobes.slidedatetimepicker.SlideDateTimePicker;
+
+import org.parceler.Parcels;
 
 import java.util.Date;
 
@@ -101,7 +109,7 @@ public class CreateNoteFragment extends Fragment implements View.OnClickListener
             @Override
             public void onDateTimeCancel()
             {
-                alarmDate.setText("");
+                alarmDate.setText("No Selected Date");
                 selectedDate = null;
             }
         };
@@ -120,9 +128,11 @@ public class CreateNoteFragment extends Fragment implements View.OnClickListener
         newNote = new Note(title.getText().toString(),
                              desc.getText().toString(),
                              selectedColor,
-                             null,
+                             selectedDate,
                              important.isChecked());
         note.putSerializable("newNote", newNote);
+
+        NoteAlarmHelper.setAlarm(newNote, getActivity(), getContext());
 
         NotesListFragment notesListFragment = new NotesListFragment();
         notesListFragment.setArguments(note);
@@ -148,4 +158,5 @@ public class CreateNoteFragment extends Fragment implements View.OnClickListener
             }
         });
     }
+
 }

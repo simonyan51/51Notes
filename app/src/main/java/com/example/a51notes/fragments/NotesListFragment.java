@@ -184,6 +184,14 @@ public class NotesListFragment extends Fragment implements View.OnClickListener 
             }
         });
 
+        properties.findViewById(R.id.properties_layout_alarm_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                note.setAlarmDate(null);
+                dialog.cancel();
+            }
+        });
+
         properties.findViewById(R.id.properties_layout_cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

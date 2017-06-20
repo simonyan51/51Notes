@@ -12,6 +12,11 @@
         android:text="@string/delete_note"
         style="@style/custom_btn"
         />
+    <Button
+        android:id="@+id/properties_layout_alarm_cancel"
+        android:text="@string/cancel_alarm"
+        style="@style/custom_btn"
+        />
     <TextView
         android:id="@+id/properties_layout_cancel"
         android:clickable="true"

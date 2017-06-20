@@ -34,4 +34,5 @@
     <string name="select_time">Select Time</string>
     <string name="edit_note">Edit Note</string>
     <string name="delete_note">Delete Note</string>
+    <string name="cancel_alarm">Cancel Alarm</string>
 </resources>
