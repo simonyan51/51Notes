@@ -217,6 +217,7 @@ public class NotesListFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onNoteDeleted(boolean successful) {
                 if (successful) {
+                    notesAdapter.notifyDataSetChanged();
                     Toast.makeText(getActivity(), "Note Succesfully Deleted!", Toast.LENGTH_LONG).show();
                 }
             }
