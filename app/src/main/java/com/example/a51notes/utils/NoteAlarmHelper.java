@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.os.SystemClock;
 
 import com.example.a51notes.broadcasts.AlarmDateBroadcastReceiver;
 import com.example.a51notes.pojos.Note;
@@ -30,7 +31,9 @@ public class NoteAlarmHelper {
 
         noteIntent.putExtra("currentNote", createdNote);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, noteIntent, 0);
+        final int _id = (int) System.currentTimeMillis();
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, _id, noteIntent, PendingIntent.FLAG_ONE_SHOT);
 
         alarmNote.set(AlarmManager.RTC_WAKEUP, note.getAlarmDate().getTime(), pendingIntent);
     }

@@ -1,6 +1,7 @@
 package com.example.a51notes.broadcasts;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.provider.ContactsContract;
 import android.support.v4.app.NotificationCompat;
 
 import com.example.a51notes.R;
+import com.example.a51notes.activities.MainActivity;
 import com.example.a51notes.pojos.Note;
 
 import org.parceler.Parcels;
@@ -24,7 +26,7 @@ import java.util.List;
 
 public class AlarmDateBroadcastReceiver extends BroadcastReceiver {
 
-    private static final int NOTIFY_ID = 5;
+    private static int notifyId = 0;
 
     private List<Note> subscribedNotes;
 
@@ -50,11 +52,17 @@ public class AlarmDateBroadcastReceiver extends BroadcastReceiver {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setSound(uri)
                 .setContentTitle(currentNote.getTitle().toString())
-                .setContentText(currentNote.getDescription().toString().substring(0, 10))
+                .setContentText(currentNote.getDescription().toString())
                 .setTicker(currentNote.getTitle().toString());
 
+        Intent clickIntent = new Intent(context, MainActivity.class);
+
+        PendingIntent pending = PendingIntent.getActivity(context, 0, clickIntent, 0);
+
+        builder.setContentIntent(pending);
+
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(NOTIFY_ID, builder.build());
+        manager.notify(notifyId++, builder.build());
 
     }
 
